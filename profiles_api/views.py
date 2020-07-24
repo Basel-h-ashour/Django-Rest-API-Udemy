@@ -31,7 +31,7 @@ class ProfileFeedItemViewset(viewsets.ModelViewSet):
     authentication_classes = (TokenAuthentication,)
     permission_classes = (ProfileFeedPermissions, IsAuthenticated)
     filter_backends = (filters.SearchFilter,)
-    search_fields = ('status_text')
+    search_fields = ('status_text',)
 
     def perform_create(self, serializer):
         """overrides the serializer.save() in the built in create()"""
